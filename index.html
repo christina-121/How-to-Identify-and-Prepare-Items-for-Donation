@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>donation guide houston · what & how to give</title>
+  <!-- Font & base for clean UI/UX with amazing animation -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(145deg, #d9e0d9 0%, #c7d0c7 100%);
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+      color: #1f2e28;
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+
+    .article-card {
+      max-width: 1100px;
+      background: rgba(255, 255, 250, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-radius: 4rem 4rem 3.2rem 3.2rem;
+      box-shadow: 0 60px 95px -35px #3f5e4b, 0 30px 40px -15px #253a2d;
+      padding: 3rem 3.2rem;
+      border: 1px solid rgba(220, 245, 225, 0.7);
+      transition: transform 0.3s ease, box-shadow 0.5s;
+      animation: donateRise 0.9s cubic-bezier(0.12, 0.75, 0.3, 1) forwards;
+    }
+
+    .article-card:hover {
+      box-shadow: 0 80px 120px -35px #2d6b46;
+    }
+
+    @keyframes donateRise {
+      0% { opacity: 0; transform: translateY(45px) scale(0.97); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    /* donation blinking animation */
+    @keyframes donatePulse {
+      0% { background: rgba(210, 240, 210, 0.2); border-left-color: #3d8552; border-right-color: #3d8552; }
+      40% { background: rgba(210, 240, 210, 0.5); border-left-color: #eab358; border-right-color: #eab358; }
+      80% { background: rgba(210, 240, 210, 0.25); border-left-color: #3d8552; border-right-color: #3d8552; }
+      100% { background: rgba(210, 240, 210, 0.2); border-left-color: #3d8552; border-right-color: #3d8552; }
+    }
+
+    .blink-donate {
+      animation: donatePulse 3.3s infinite ease-in-out;
+      border-left: 12px solid #2f784a;
+      border-right: 12px solid #2f784a;
+      border-radius: 4rem;
+      padding: 2.2rem 2.5rem;
+      background: rgba(220, 245, 220, 0.3);
+      margin: 3rem 0;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 650;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.2rem;
+      background: linear-gradient(145deg, #2d7a47, #195231);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      border-bottom: 4px solid #c0e6cd;
+      padding-bottom: 1rem;
+    }
+
+    .title-emoji {
+      font-size: 3.8rem;
+      filter: drop-shadow(2px 8px 16px #4fa06a);
+    }
+
+    .subhead {
+      font-size: 1.4rem;
+      font-weight: 340;
+      color: #2c874b;
+      margin-bottom: 2.2rem;
+      padding-left: 2.2rem;
+      border-left: 8px solid #e7aa4d;
+      background: #e4f7ea70;
+      border-radius: 0 80px 80px 0;
+      padding: 0.8rem 2.2rem;
+    }
+
+    h2 {
+      font-size: 2.4rem;
+      font-weight: 580;
+      margin: 2.8rem 0 1.4rem 0;
+      color: #267a42;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      border-bottom: 3px dashed #b2e0c2;
+      padding-bottom: 0.6rem;
+    }
+
+    h2 span {
+      font-size: 2.7rem;
+    }
+
+    h3 {
+      font-size: 2rem;
+      font-weight: 500;
+      margin: 2rem 0 1rem;
+      color: #288f4a;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    p {
+      margin-bottom: 1.3rem;
+      font-weight: 350;
+      color: #1e5a33;
+      font-size: 1.1rem;
+    }
+
+    /* charity grid: salvation army, goodwill, habitat, others */
+    .charity-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2.2rem;
+      margin: 2.5rem 0 2rem;
+    }
+
+    .charity-card {
+      background: #ffffffee;
+      border-radius: 3rem;
+      padding: 2rem 1.8rem;
+      box-shadow: 0 22px 40px -22px #30834e;
+      transition: all 0.3s;
+      border: 1px solid white;
+      backdrop-filter: blur(2px);
+    }
+
+    .charity-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      background: white;
+      border-color: #dba85a;
+      box-shadow: 0 32px 48px -28px #2b8a4c;
+    }
+
+    .charity-icon {
+      font-size: 4rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .charity-title {
+      font-weight: 650;
+      font-size: 1.8rem;
+      color: #1f7439;
+      margin: 0.5rem 0 0.3rem;
+    }
+
+    .badge-charity {
+      background: #d68f44;
+      color: #1e3d24;
+      border-radius: 40px;
+      padding: 0.2rem 1.2rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      display: inline-block;
+      margin: 1rem 0 0.2rem;
+    }
+
+    /* graphic strip */
+    .graphic-strip {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 45px;
+      background: #daf0e2;
+      border-radius: 150px;
+      padding: 2rem 3.5rem;
+      margin: 2.5rem 0;
+      flex-wrap: wrap;
+    }
+
+    .graphic-icon {
+      font-size: 4rem;
+      filter: drop-shadow(0 8px 18px #4fa06a);
+      transition: transform 0.2s;
+    }
+
+    .graphic-icon:hover {
+      transform: rotate(8deg) scale(1.15);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #ffffffee;
+      border-radius: 3rem;
+      overflow: hidden;
+      box-shadow: 0 20px 42px -22px #2d874b;
+      margin: 2.5rem 0;
+      backdrop-filter: blur(4px);
+    }
+
+    th {
+      background: #2f9b52;
+      color: white;
+      font-weight: 500;
+      padding: 1.2rem 1.8rem;
+      text-align: left;
+      font-size: 1.2rem;
+    }
+
+    td {
+      padding: 1.2rem 1.8rem;
+      border-bottom: 1px solid #c2eed2;
+      vertical-align: top;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .footer-links {
+      margin-top: 5rem;
+      padding-top: 2.8rem;
+      border-top: 6px solid #c0e6cd;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.8rem;
+      justify-content: center;
+      font-size: 1.3rem;
+      background: #eaf9ef;
+      border-radius: 80px 80px 40px 40px;
+      padding: 2rem 3.5rem;
+      backdrop-filter: blur(3px);
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.8rem 2.2rem;
+      border-radius: 70px;
+      background: white;
+      border: 1px solid #b2e0c2;
+      color: #247a3e;
+      transition: all 0.25s;
+      box-shadow: 0 6px 18px #9ecfab;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .footer-links a:hover {
+      background: #def7e4;
+      border-color: #c99e4b;
+      transform: scale(1.07);
+      box-shadow: 0 18px 28px #8bc09b;
+    }
+
+    .blink-dot {
+      width: 16px;
+      height: 16px;
+      background: #ecaa4b;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 12px;
+      animation: dotGive 1.8s infinite;
+    }
+
+    @keyframes dotGive {
+      0% { opacity: 0.4; background: #cc8228; }
+      50% { opacity: 1; background: #ffc468; box-shadow: 0 0 22px #f5a93b; }
+      100% { opacity: 0.4; background: #cc8228; }
+    }
+
+    @media (max-width: 750px) {
+      .article-card { padding: 2rem 1.5rem; }
+      h1 { font-size: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="article-card">
+  <h1>
+    <span class="title-emoji">🎁🤝</span> donation guide · houston area
+  </h1>
+  <div class="subhead">what local charities accept · how to prepare items</div>
+
+  <!-- intro with blinking dot -->
+  <p><span class="blink-dot"></span> <strong>Cleaning out your garage or decluttering your home? Donating usable items keeps them out of landfills and supports our neighbors in need.</strong> But knowing what local charities accept — and in what condition — can be confusing. This guide covers major Houston-area organizations like The Salvation Army, Goodwill, and Houston Habitat for Humanity ReStore, plus tips to prepare your donations so they can be used again.</p>
+
+  <!-- graphic strip -->
+  <div class="graphic-strip">
+    <span class="graphic-icon">👕📦</span>
+    <span class="graphic-icon">🪑🧹</span>
+    <span class="graphic-icon">🏡🔨</span>
+    <span class="graphic-icon">🚛❤️</span>
+  </div>
+
+  <!-- charity grid: salvation army, goodwill, habitat, others -->
+  <h2><span>🏪</span> where to donate in houston</h2>
+  <div class="charity-grid">
+    <div class="charity-card">
+      <div class="charity-icon">🔴⛪</div>
+      <div class="charity-title">salvation army</div>
+      <p>Accepts clothing, furniture, appliances, vehicles. Items should work and be clean. They offer pickup for larger donations.</p>
+      <span class="badge-charity">call for pickup</span>
+    </div>
+    <div class="charity-card">
+      <div class="charity-icon">🤝🛒</div>
+      <div class="charity-title">goodwill</div>
+      <p>Clothing, housewares, electronics, small furniture. Must be in sellable condition. Multiple Houston donation centers.</p>
+      <span class="badge-charity">no large appliances</span>
+    </div>
+    <div class="charity-card">
+      <div class="charity-icon">🏚️🔨</div>
+      <div class="charity-title">habitat for humanity restore</div>
+      <p>Building materials, appliances, furniture, tools. Great for construction leftovers, cabinets, windows, doors.</p>
+      <span class="badge-charity">they often pick up</span>
+    </div>
+    <div class="charity-card">
+      <div class="charity-icon">🐾🧸</div>
+      <div class="charity-title">other local orgs</div>
+      <p>Be My Neighbor (furniture for refugees), Star of Hope (clothing), local animal shelters (towels, blankets).</p>
+      <span class="badge-charity">call ahead</span>
+    </div>
+  </div>
+
+  <!-- blinking block: why donate matters -->
+  <div class="blink-donate">
+    <h3 style="margin-top:0; display:flex; gap:12px;"><span>💡🌱</span> why donating matters in houston</h3>
+    <p>Our city sends millions of tons to landfills each year — but many items could be reused. Donating supports job training programs (like Goodwill's) and affordable housing (Habitat). And after storms like Harvey, donated goods helped thousands recover. Even when you hire <strong>Dumpster rental</strong> for a major cleanout, you can set aside donations for a separate pickup. Every bit counts.</p>
+  </div>
+
+  <!-- detailed donation table -->
+  <h2><span>📋</span> what's accepted? a quick reference</h2>
+  <table>
+    <thead><tr><th>item category</th><th>salvation army</th><th>goodwill</th><th>habitat restore</th><th>condition needed</th></tr></thead>
+    <tbody>
+      <tr><td><strong>👕 clothing</strong></td><td>yes</td><td>yes</td><td>no</td><td>clean, no rips/stains</td></tr>
+      <tr><td><strong>🪑 furniture</strong></td><td>yes (large ok)</td><td>small/medium only</td><td>yes</td><td>no major damage, no bed bugs</td></tr>
+      <tr><td><strong>📺 electronics</strong></td><td>working, recent</td><td>working</td><td>select items</td><td>test before donating</td></tr>
+      <tr><td><strong>🔧 tools</strong></td><td>yes</td><td>yes</td><td>yes</td><td>working, no rust</td></tr>
+      <tr><td><strong>🏚️ building materials</strong></td><td>no</td><td>no</td><td>yes (doors, windows, lumber)</td><td>usable, no rot</td></tr>
+      <tr><td><strong>🍽️ kitchenware</strong></td><td>yes</td><td>yes</td><td>select</td><td>clean, no chips/cracks</td></tr>
+    </tbody>
+  </table>
+
+  <!-- extra graphic strip 2 -->
+  <div style="display: flex; gap: 24px; justify-content: space-around; font-size: 3.2rem; margin: 2.5rem 0;">
+    <span>📦🧼</span> <span>🔨🪚</span> <span>🚚❤️</span> <span>♻️🌿</span>
+  </div>
+
+  <!-- how to prepare items -->
+  <h2><span>🧹</span> how to prepare items for donation</h2>
+  <p>A few minutes of prep makes your items more likely to be resold or used — and keeps them out of the trash.</p>
+  <ul style="margin:1rem 0 1.5rem 2.5rem; list-style-type: '✅ '; font-size:1.1rem;">
+    <li><strong>Clean everything:</strong> Wash clothes, wipe down furniture, clean appliances. Musty or dirty items often get discarded.</li>
+    <li><strong>Check for damage:</strong> Test electronics, ensure furniture isn't wobbly, no broken zippers or missing parts.</li>
+    <li><strong>Group like items:</strong> Bag clothes together, box kitchenware. Makes sorting easier for staff.</li>
+    <li><strong>Know what's not accepted:</strong> Mattresses, car seats, large appliances (varies), paint/hazardous materials — call first.</li>
+    <li><strong>Get a receipt:</strong> Most charities provide a tax receipt — ask for it and note the items donated.</li>
+  </ul>
+
+  <!-- donation logistics -->
+  <h3><span>🚛</span> drop-off vs. pickup</h3>
+  <p>Most charities have drop-off centers with posted hours. For large furniture or multiple items, many offer free pickup — but you may need to schedule weeks ahead. When you're doing a major cleanout, you can combine donation pickup with a <strong>find us</strong> service: have pros haul away trash while donations are set aside for charity. This saves time and ensures items go where they're needed.</p>
+
+  <!-- what not to donate -->
+  <div style="background: #e2f5e8; border-radius: 3rem; padding: 2rem 2.5rem; margin: 2.5rem 0;">
+    <span style="font-size:2.8rem; margin-right: 16px;">🚫📦</span>
+    <strong style="font-size:1.7rem;">please don't donate</strong>
+    <ul style="margin-top:1rem; list-style-type: '❌ '; padding-left: 2.2rem;">
+      <li>mattresses or box springs (most thrifts don't take them)</li>
+      <li>carseats (safety expiration)</li>
+      <li>large appliances (fridges, washers — unless specifically accepted)</li>
+      <li>paint, chemicals, hazardous waste</li>
+      <li>torn/stained clothing or broken items</li>
+      <li>old TVs (many centers no longer accept CRTs)</li>
+    </ul>
+    <p style="margin-top:1rem;">For these items, check with the City of Houston's environmental service or a <strong>Dumpster rental</strong> company for proper disposal.</p>
+  </div>
+
+  <!-- local houston context -->
+  <h3><span>🏙️</span> houston-specific resources</h3>
+  <ul style="margin:1rem 0 1.5rem 2.5rem; list-style-type: '📍 '; font-size:1.1rem;">
+    <li><strong>City of Houston recycling centers</strong> accept some electronics and household hazardous waste.</li>
+    <li><strong>Be My Neighbor</strong> helps furnish homes for refugees — they often need specific items.</li>
+    <li><strong>Star of Hope</strong> takes clothing and household goods for people transitioning from homelessness.</li>
+    <li><strong>Animal shelters</strong> (like Houston SPCA) accept clean towels, blankets, and pet supplies.</li>
+  </ul>
+
+  <!-- final educational note -->
+  <p><span class="blink-dot"></span> Donating is a win‑win: you clear space, help neighbors, and reduce waste. By knowing what local charities accept and prepping items well, you make the process smooth for everyone. And when items truly can't be reused, responsible disposal — sometimes with a professional <strong>Dumpster rental</strong> — ensures they don't harm our bayous and bays. Every thoughtful choice adds up.</p>
+
+  <!-- Links exactly as requested: at the end -->
+  <div class="footer-links">
+    <a href="https://bubbasjunkremoval.com/" target="_blank" rel="noopener">🚛 Dumpster rental</a>
+    <a href="https://share.google/xxI5CWt4YtrUwAyPa" target="_blank" rel="noopener">📍 find us</a>
+    <a href="https://christina-121.github.io/The-History-of-Waste-Management-in-Houston/" target="_blank" rel="noopener">📁 Github Repositary</a>
+  </div>
+
+  <!-- footer note -->
+  <div style="text-align: center; margin-top: 2.2rem; font-size: 0.95rem; color: #248542;">
+    🎁 houston donation guide · 100% educational, zero fluff.
+  </div>
+</div>
+</body>
+</html>
